@@ -11,7 +11,7 @@
         class="el-menu-vertical-demo"
         @select="change_aside_menu"
         @click="get($event)"
-        :default-active="activie_index"
+        :default-active="active_index"
         :unique-opened="true"
         :background-color="aside.aside_background_color"
         :text-color="aside.aside_icon_color"
@@ -20,12 +20,12 @@
     >
       <el-menu-item index="/home">
         <i class="el-icon-menu" :style="{color:aside.aside_icon_color}"></i>
-        <span slot="title">主页</span>
+        <span slot="title">统计面板</span>
       </el-menu-item>
       <el-submenu index="2">
         <template slot="title">
           <i class="el-icon-suitcase" :style="{color:aside.aside_icon_color}"></i>
-          <span>组件</span>
+          <span>商品管理</span>
         </template>
         <el-menu-item index="/module/editor">富文本</el-menu-item>
         <el-menu-item index="/module/superform">超级表单</el-menu-item>
@@ -36,7 +36,7 @@
       <el-submenu index="3">
         <template slot="title">
           <i class="el-icon-tickets" :style="{color:aside.aside_icon_color}"></i>
-          <span>表格</span>
+          <span>用户管理</span>
         </template>
         <el-menu-item index="/module/table">用户表格</el-menu-item>
         <el-menu-item index="/module/table/excel">支持Excel表格</el-menu-item>
@@ -56,13 +56,18 @@
           <span>常用页面</span>
         </template>
         <el-menu-item index="/page/message/list">留言列表</el-menu-item>
-        <el-menu-item index="/">登录</el-menu-item>
-        <el-menu-item index="/register">注册</el-menu-item>
-        <el-menu-item index="/forget/password">找回密码</el-menu-item>
+<!--        <el-menu-item index="/">登录</el-menu-item>-->
+<!--        <el-menu-item index="/register">注册</el-menu-item>-->
+<!--        <el-menu-item index="/forget/password">找回密码</el-menu-item>-->
         <el-menu-item index="/page/not/found">404页面不存在</el-menu-item>
         <el-menu-item index="/page/warning">500错误页</el-menu-item>
       </el-submenu>
+      <el-menu-item index="/download">
+        <i class="el-icon-shopping-cart-full" :style="{color:aside.aside_icon_color}"></i>
+        <span slot="title">订单管理</span>
+      </el-menu-item>
       <el-submenu index="6">
+
         <template slot="title">
           <i class="el-icon-setting" :style="{color:aside.aside_icon_color}"></i>
           <span>设置</span>
@@ -78,10 +83,7 @@
           <el-menu-item index="/setting/password">密码设置</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
-      <el-menu-item index="/download">
-        <i class="el-icon-shopping-cart-full" :style="{color:aside.aside_icon_color}"></i>
-        <span slot="title">获取源码</span>
-      </el-menu-item>
+
     </el-menu>
   </el-aside>
 </template>
@@ -91,7 +93,7 @@ import Pass from "@/plugins/Pass.js";
 export default {
   data() {
     return {
-      activie_index: this.$cookies.get("activie_index"),
+      active_index: this.$cookies.get("active_index"),
       aside: {
         aside_background_color: this.$cookies.get("setting")
             .aside_background_color,
@@ -122,10 +124,10 @@ export default {
   },
   methods: {
     change_aside_menu(index) {
-      this.activie_index = index;
-      if (index != this.$cookies.get("activie_index")) {
-        this.$cookies.set("activie_index", index);
-        this.$router.push(this.$cookies.get("activie_index"));
+      this.active_index = index;
+      if (index != this.$cookies.get("active_index")) {
+        this.$cookies.set("active_index", index);
+        this.$router.push(this.$cookies.get("active_index"));
       }
     },
     get(e) {
@@ -133,9 +135,9 @@ export default {
     },
   },
   mounted() {
-    if (this.$cookies.get("activie_index") == null) {
-      this.$cookies.set("activie_index", 1);
-      this.$router.push(this.$cookies.get("activie_index"));
+    if (this.$cookies.get("active_index") == null) {
+      this.$cookies.set("active_index", 1);
+      this.$router.push(this.$cookies.get("active_index"));
     }
   },
 };

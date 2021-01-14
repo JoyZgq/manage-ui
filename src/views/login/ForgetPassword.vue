@@ -3,7 +3,7 @@
     <div id="form_space">
       <div align="center">
         <h1>{{ forget_title }}</h1>
-        <p>{{ forget_adress }}</p>
+        <p>{{ forget_address }}</p>
       </div>
       <div style="padding:20px">
         <el-form ref="form" :model="forget_form">
@@ -64,8 +64,8 @@
 export default {
   data() {
     return {
-      forget_title: "EuiAdmin",
-      forget_adress: "EuiAdmin找回密码模板，极简超强开源的vue框架",
+      forget_title: "密码找回",
+      forget_address: "密码丢失了？别担心，输入邮箱找回吧！",
       verify_button_data: {
         button_title: "获取验证码",
         button_state: false,

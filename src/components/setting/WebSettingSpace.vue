@@ -42,12 +42,12 @@ export default {
   data() {
     return {
       form: {
-        web_name: "EuiAdmin",
+        web_name: "麦田书童",
         web_link: "http://www.euiadmin.com",
         file_web_link: "http://www.euiadmin.com/public/file",
         file_max_size: 12,
-        web_mate_content: 'EuiAdmin是基于Vue加Element-Ui共同构建，快速开发学习的整体后台框架。',
-        web_copyright: "©2019黔1920号",
+        web_mate_content: '麦田书童，为孩子提供更好的教育选择',
+        web_copyright: "©2021苏0115号",
       },
     };
   },

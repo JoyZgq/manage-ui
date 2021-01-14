@@ -3,7 +3,7 @@
     <div id="form_space">
       <div align="center">
         <h1>{{ register_title }}</h1>
-        <p>{{ register_adress }}</p>
+        <p>{{ register_address }}</p>
       </div>
       <div style="padding:20px">
         <el-form ref="form" :model="register_form">
@@ -71,8 +71,8 @@
 export default {
   data() {
     return {
-      register_title: "EuiAdmin",
-      register_adress: "EuiAdmin注册模板，极简超强开源的vue框架",
+      register_title: "新用户注册",
+      register_address: "欢迎新同学，快来加入吧！",
       verify_button_data: {
         button_title: "获取验证码",
         button_state: false,

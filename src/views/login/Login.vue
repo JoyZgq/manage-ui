@@ -3,7 +3,7 @@
     <div id="form_space">
       <div align="center">
         <h1>{{ login_title }}</h1>
-        <p>{{ login_adress }}</p>
+        <p>{{ login_address }}</p>
       </div>
       <div style="padding:20px">
         <el-form ref="form" :model="login_form">
@@ -32,10 +32,10 @@
 export default {
   data() {
     return {
-      login_title: "EuiAdmin",
-      login_adress: "EuiAdmin登录模板，极简超强的vue框架",
+      login_title: "麦田书童",
+      login_address: "欢迎来到麦田书童管理平台",
       login_form: {
-        user_name: "EuiAdmin",
+        user_name: "麦芽小禾",
         user_password: "12346",
       },
       remember_password: false,
@@ -55,12 +55,12 @@ export default {
     },
     setting_web() {
       this.color_form = {
-        aside_background_color: "#000000",
-        aside_text_color: "#ffffff",
-        aside_icon_color: "#ffffff",
+        aside_background_color: "#ffffff",
+        aside_text_color: "#000000",
+        aside_icon_color: "#000000",
         aside_active_text_color: "#67C23A",
-        aside_title: "EuiAdmin",
-        aside_small_title: "Eui",
+        aside_title: "麦田书童",
+        aside_small_title: "MT",
         aside_width: 200,
         aside_small_width: 65,
         head_icon_color: "#606266",

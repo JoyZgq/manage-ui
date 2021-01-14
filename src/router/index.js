@@ -9,7 +9,7 @@ const routes = [{
     component: resolve => require(['@/views/login/Login.vue'], resolve),
     meta: {
         title: '登录',
-        vist_label: ['super_admin', 'admin', 'user']
+        visit_label: ['super_admin', 'admin', 'user']
     },
 },
     {
@@ -19,7 +19,7 @@ const routes = [{
         // component: () => import('@/views/login/Register.vue'),
         meta: {
             title: '注册',
-            vist_label: ['super_admin', 'admin', 'user']
+            visit_label: ['super_admin', 'admin', 'user']
         },
     },
     {
@@ -29,7 +29,7 @@ const routes = [{
         // component: () => import('@/views/login/ForgetPassword.vue'),
         meta: {
             title: '找回密码',
-            vist_label: ['super_admin', 'admin', 'user']
+            visit_label: ['super_admin', 'admin', 'user']
         },
     },
     {
@@ -38,9 +38,9 @@ const routes = [{
         component: resolve => require(['@/views/home/Home.vue'], resolve),
         // component: () => import('@/views/home/Home.vue'),
         meta: {
-            title: '主页',
+            title: '统计面板',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -51,7 +51,7 @@ const routes = [{
         meta: {
             title: '富文本编辑器',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -62,7 +62,7 @@ const routes = [{
         meta: {
             title: '超级表单',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -73,7 +73,7 @@ const routes = [{
         meta: {
             title: '图片上传',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -84,7 +84,7 @@ const routes = [{
         meta: {
             title: '文件上传',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -95,7 +95,7 @@ const routes = [{
         meta: {
             title: 'Eui动画',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -106,7 +106,7 @@ const routes = [{
         meta: {
             title: '虚拟用户表格',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -117,7 +117,7 @@ const routes = [{
         meta: {
             title: '支持Excel表格',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     // Echarts表格
@@ -129,7 +129,7 @@ const routes = [{
         meta: {
             title: '柱状图',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -140,7 +140,7 @@ const routes = [{
         meta: {
             title: '折线图',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -151,7 +151,7 @@ const routes = [{
         meta: {
             title: '地图',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     // 常用页面
@@ -163,7 +163,7 @@ const routes = [{
         meta: {
             title: '留言',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -174,7 +174,7 @@ const routes = [{
         meta: {
             title: '页面不存在',
             login_state: false,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -185,7 +185,7 @@ const routes = [{
         meta: {
             title: '系统错误',
             login_state: false,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     // 设置
@@ -197,7 +197,7 @@ const routes = [{
         meta: {
             title: '系统设置',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -208,7 +208,7 @@ const routes = [{
         meta: {
             title: '邮箱设置',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -219,7 +219,7 @@ const routes = [{
         meta: {
             title: '个人设置',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -230,7 +230,7 @@ const routes = [{
         meta: {
             title: '密码修改',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
     {
@@ -241,7 +241,7 @@ const routes = [{
         meta: {
             title: '获取Eui',
             login_state: true,
-            vist_label: ['super_admin', 'admin']
+            visit_label: ['super_admin', 'admin']
         },
     },
 ]
@@ -252,7 +252,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     let user_label = sessionStorage.getItem('user_label')
     let user_login = sessionStorage.getItem('user_login')
-    let power = to.meta.vist_label.indexOf(user_label) //判断是否有权限
+    let power = to.meta.visit_label.indexOf(user_label) //判断是否有权限
     let need_login = 'login_state' in to.meta //是否需要登录
     if (!need_login) {
         next()

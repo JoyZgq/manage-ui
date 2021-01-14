@@ -53,7 +53,7 @@ export default {
         {
           card_title_icon: "el-icon-wallet",
           card_title: "收入",
-          card_cycle: "日",
+          card_cycle: "周",
           card_cycle_back_color: "#F56C6C",
           bottom_title: "总收入",
           vist_num: Math.ceil(Math.random() * 100000),
